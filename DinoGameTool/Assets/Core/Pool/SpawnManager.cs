@@ -5,7 +5,7 @@ using System.Collections;
 using System;
 using System.Text;
 
-namespace Dino_Core.AssetsUtils
+namespace Dino_Core.Core
 {
 
     /// <summary>
@@ -64,7 +64,7 @@ namespace Dino_Core.AssetsUtils
 
             try
             {
-                _pools = (Resources.Load("ConfigurationAsset/Dino_Core.AssetsUtils.SpawnPoolConfig") as SpawnPoolConfig).Pools;
+                _pools = (Resources.Load("ConfigurationAsset/Dino_Core.Core.SpawnPoolConfig") as SpawnPoolConfig).Pools;
             }
             catch (Exception)
             {

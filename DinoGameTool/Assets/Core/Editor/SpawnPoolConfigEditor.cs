@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Dino_Core.AssetsUtils
+namespace Dino_Core.Core
 {
     [CustomEditor(typeof(SpawnPoolConfig))]
     public class SpawnPoolConfigEditor : Editor

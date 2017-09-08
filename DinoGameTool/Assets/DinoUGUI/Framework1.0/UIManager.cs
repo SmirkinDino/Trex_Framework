@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
-using Dino_Core.AssetsUtils;
+using Dino_Core.Core;
 
 namespace Dino_Core.DinoUGUI
 {

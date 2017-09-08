@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Dino_Core.AssetsUtils
+namespace Dino_Core.Core
 {
     [Serializable]
     public class SpawnPool

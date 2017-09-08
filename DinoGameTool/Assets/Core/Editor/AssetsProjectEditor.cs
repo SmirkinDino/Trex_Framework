@@ -3,7 +3,7 @@ using UnityEditor;
 using System;
 using System.IO;
 
-namespace Dino_Core.AssetsUtils
+namespace Dino_Core.Core
 {
     [ExecuteInEditMode]
     public class AssetsProjectEditor
@@ -50,7 +50,7 @@ namespace Dino_Core.AssetsUtils
             {
 
             }
-
+            Selection.activeObject = _configEntity;
         }
     }
 }

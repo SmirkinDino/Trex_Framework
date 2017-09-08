@@ -7,7 +7,7 @@ using System.Reflection;
 using System;
 using System.Collections.Generic;
 
-namespace Dino_Core.AssetsUtils
+namespace Dino_Core.Core
 {
     /// <summary>
     /// 类库拓展方法集合

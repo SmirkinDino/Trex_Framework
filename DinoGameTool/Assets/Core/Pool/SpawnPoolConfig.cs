@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Dino_Core.AssetsUtils
+namespace Dino_Core.Core
 {
     [System.Serializable]
     public class SpawnPoolConfig : ScriptableObject
