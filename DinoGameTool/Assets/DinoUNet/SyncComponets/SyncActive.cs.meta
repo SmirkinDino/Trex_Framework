@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: cffc3fea328f5de40ad546f0f65aaace
+<<<<<<< .mine
+timeCreated: 1478158610
+licenseType: Pro
+||||||| .r118
+timeCreated: 1478158001
+licenseType: Pro
+=======
+timeCreated: 1478158737
+licenseType: Free
+>>>>>>> .r119
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
