@@ -5,7 +5,6 @@
 /// 
 /// RunningTrex 2017.09.08
 /// </summary>
-
 using System.Collections.Generic;
 using UnityEngine;
 namespace Dino_Core.Core
