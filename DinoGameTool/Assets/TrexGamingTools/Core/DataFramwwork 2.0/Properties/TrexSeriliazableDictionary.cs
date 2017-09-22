@@ -8,53 +8,23 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+
 namespace Dino_Core.Core
 {
     [System.Serializable]
-    public sealed class TrexSeriliazableDictionary<TKey, TValue> :  Dictionary<TKey, TValue>, ISerializationCallbackReceiver
+    public class TrexSeriliazableDictionary<TKey, TValue> : Dictionary<TKey, TValue>, ISerializationCallbackReceiver
     {
-        public new TValue this[TKey _key]
-        {
-            get
-            {
-                if (this.ContainsKey(_key))
-                {
-                    return this[_key];
-                }
-
-                this.DLog(_key + " not this key");
-
-                return default(TValue);
-            }
-            set
-            {
-                if (this == null)
-                {
-                    return;
-                }
-
-                if (this.ContainsKey(_key))
-                {
-                    this[_key] = value;
-                }
-                else
-                {
-                    this.Add(_key, value);
-                }
-            }
-        }
-
-        [SerializeField] private List<TKey> _keys = new List<TKey>();
-        [SerializeField] private List<TValue> _values = new List<TValue>();
+        [SerializeField] private List<TKey> _keys;
+        [SerializeField] private List<TValue> _values;
 
         [NonSerialized] private Enumerator _enumerator;
-
+        [NonSerialized] private List<KeyValuePair<TKey, TValue>> _keyValuePairs;
         public void OnBeforeSerialize()
         {
             _keys.Clear();
-            _values.Clear();
-
             _keys.Capacity = this.Count;
+
+            _values.Clear();
             _values.Capacity = this.Count;
 
             _enumerator = this.GetEnumerator();
@@ -81,6 +51,24 @@ namespace Dino_Core.Core
                 this.DLog("key - value dosn't match");
             }
         }
-    }
+        public TrexSeriliazableDictionary() : base()
+        {
+            _values = new List<TValue>();
+            _keys = new List<TKey>();
+            _keyValuePairs = new List<KeyValuePair<TKey, TValue>>();
+        }
+        public List<KeyValuePair<TKey, TValue>> GetList()
+        {
+            _keyValuePairs.Clear();
 
+            OnBeforeSerialize();
+
+            for (int i = 0; i < _keys.Count; i++)
+            {
+                _keyValuePairs.Add(new KeyValuePair<TKey, TValue>(_keys[i], _values[i]));
+            }
+
+            return _keyValuePairs;
+        }
+    }
 }

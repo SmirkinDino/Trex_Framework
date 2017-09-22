@@ -48,7 +48,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DinoGeneric.cs" />
-    <Compile Include="ExcelReader.cs" />
     <Compile Include="NodeStruct.cs" />
     <Compile Include="ObjectsHelper.cs" />
     <Compile Include="PhysicsFunc.cs" />

@@ -35,3 +35,9 @@ E:\Dino_Core\Extends_Lib\Dino_Core\Dino_Core\bin\Debug\UnityEngine.dll
 E:\Dino_Core\Extends_Lib\Dino_Core\Dino_Core\obj\Debug\Dino_Core.csprojResolveAssemblyReference.cache
 E:\Dino_Core\Extends_Lib\Dino_Core\Dino_Core\obj\Debug\Dino_Core.dll
 E:\Dino_Core\Extends_Lib\Dino_Core\Dino_Core\obj\Debug\Dino_Core.pdb
+E:\Trex_Framework\Extends_Lib\Dino_Core\Dino_Core\obj\Debug\Dino_Core.csprojResolveAssemblyReference.cache
+E:\Trex_Framework\Extends_Lib\Dino_Core\Dino_Core\obj\Debug\Dino_Core.dll
+E:\Trex_Framework\Extends_Lib\Dino_Core\Dino_Core\obj\Debug\Dino_Core.pdb
+E:\Trex_Framework\Extends_Lib\Dino_Core\Dino_Core\bin\Debug\Dino_Core.dll
+E:\Trex_Framework\Extends_Lib\Dino_Core\Dino_Core\bin\Debug\Dino_Core.pdb
+E:\Trex_Framework\Extends_Lib\Dino_Core\Dino_Core\bin\Debug\UnityEngine.dll

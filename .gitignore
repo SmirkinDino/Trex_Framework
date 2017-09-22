@@ -1,0 +1,13 @@
+/DinoGameTool/Library
+/DinoGameTool/obj
+
+[merge]
+tool = unityyamlmerge
+
+[mergetool "unityyamlmerge"]
+trustExitCode = false
+cmd = '<path to UnityYAMLMerge>' merge -p "$BASE" "$REMOTE" "$LOCAL" "$MERGED"
+/DinoGameTool/Assembly-CSharp.csproj
+/DinoGameTool/Assembly-CSharp-Editor.csproj
+/DinoGameTool/DinoGameTool.sln
+/DinoGameTool/.vs

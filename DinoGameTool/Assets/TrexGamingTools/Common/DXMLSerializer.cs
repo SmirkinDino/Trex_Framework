@@ -45,7 +45,6 @@ public class DXMLSerializer {
     {
         object _result = default(object);
 
-
         if (File.Exists(_filePath))
         {
             using (StreamReader _reader = new StreamReader(_filePath))
