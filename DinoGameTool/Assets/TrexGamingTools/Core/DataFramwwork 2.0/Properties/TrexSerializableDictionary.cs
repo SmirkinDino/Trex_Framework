@@ -12,13 +12,31 @@ using UnityEngine;
 namespace Dino_Core.Core
 {
     [System.Serializable]
-    public class TrexSeriliazableDictionary<TKey, TValue> : Dictionary<TKey, TValue>, ISerializationCallbackReceiver
+    public class TrexSerializableDictionary<TKey, TValue> : Dictionary<TKey, TValue>, ISerializationCallbackReceiver
     {
         [SerializeField] private List<TKey> _keys;
         [SerializeField] private List<TValue> _values;
 
         [NonSerialized] private Enumerator _enumerator;
         [NonSerialized] private List<KeyValuePair<TKey, TValue>> _keyValuePairs;
+
+        public List<KeyValuePair<TKey, TValue>> KeyValuePairs
+        {
+            get
+            {
+                _keyValuePairs.Clear();
+
+                OnBeforeSerialize();
+
+                for (int i = 0; i < _keys.Count; i++)
+                {
+                    _keyValuePairs.Add(new KeyValuePair<TKey, TValue>(_keys[i], _values[i]));
+                }
+
+                return _keyValuePairs;
+            }
+        }
+
         public void OnBeforeSerialize()
         {
             _keys.Clear();
@@ -28,7 +46,6 @@ namespace Dino_Core.Core
             _values.Capacity = this.Count;
 
             _enumerator = this.GetEnumerator();
-
             while (_enumerator.MoveNext())
             {
                 _keys.Add(_enumerator.Current.Key);
@@ -51,24 +68,11 @@ namespace Dino_Core.Core
                 this.DLog("key - value dosn't match");
             }
         }
-        public TrexSeriliazableDictionary() : base()
+        public TrexSerializableDictionary() : base()
         {
             _values = new List<TValue>();
             _keys = new List<TKey>();
             _keyValuePairs = new List<KeyValuePair<TKey, TValue>>();
-        }
-        public List<KeyValuePair<TKey, TValue>> GetList()
-        {
-            _keyValuePairs.Clear();
-
-            OnBeforeSerialize();
-
-            for (int i = 0; i < _keys.Count; i++)
-            {
-                _keyValuePairs.Add(new KeyValuePair<TKey, TValue>(_keys[i], _values[i]));
-            }
-
-            return _keyValuePairs;
         }
     }
 }
