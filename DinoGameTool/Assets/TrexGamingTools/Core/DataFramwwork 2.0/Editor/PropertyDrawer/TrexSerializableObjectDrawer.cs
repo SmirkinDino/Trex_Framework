@@ -1,31 +1,30 @@
 ﻿using Dino_Core.Core;
 using System;
-using System.Collections.Generic;
 using UnityEditor;
 using UnityEditorInternal;
 using UnityEngine;
 
-[CustomPropertyDrawer(typeof(TrexSerializableObject))]
+[CustomPropertyDrawer(typeof(TrexSerializableObject), true)]
 public class TrexSerializableObjectDrawer : PropertyDrawer {
 
     protected TrexSerializableObject _container;
     protected TrexSerializableItem _targetObject;
-
     protected ReorderableList _reorderList;
 
     protected TrexObjectType _addingType;
     protected string _addingKey;
     protected bool _isDraw;
 
-    protected static readonly float LABEL_WIDTH_KEY = 80.0f;
-    protected static readonly float LABEL_WIDTH_TYPE = 120.0f;
-    protected static readonly float LABEL_WIDTH_VALUE = 208.0f;
+    protected static readonly float LABEL_WIDTH_KEY = 130.0f;
+    protected static readonly float LABEL_WIDTH_TYPE = 100.0f;
+    protected static readonly float LABEL_WIDTH_VALUE = 188.0f;
     protected static readonly float LABEL_WIDTH_BUTTON = 20.0f;
 
-    protected static readonly float EMPTY_PADDING = 64.0f;
+    protected static readonly float EMPTY_PADDING = 78.0f;
     protected static readonly float EMPTY_PADDING_HEIGHT = 4.0f;
     protected static readonly float EMPTY_MARGIN_HEIGHT = 1.0f;
     protected static readonly float BUTTON_MARGIN_HEIGHT = 1.0f;
+
     public void InitIfNot(SerializedProperty property)
     {
         if (_container == null)
@@ -66,7 +65,7 @@ public class TrexSerializableObjectDrawer : PropertyDrawer {
 
                 // value
                 TrexSerializableObjectFieldDrawer.AdaptTable[_targetObject.type](_targetObject, rect);
-                rect.x = _origin.width + 16;
+                rect.x = _origin.width + 12;
                 rect.height -= BUTTON_MARGIN_HEIGHT;
                 rect.width = LABEL_WIDTH_BUTTON;
 
@@ -80,7 +79,6 @@ public class TrexSerializableObjectDrawer : PropertyDrawer {
                     {
                         _container.DataTable.Remove(_targetObject.Key);
                     }
-                    _reorderList.list.Remove(_targetObject);
                 }
             };
 
@@ -122,10 +120,12 @@ public class TrexSerializableObjectDrawer : PropertyDrawer {
     }
     public override void OnGUI(Rect _position, SerializedProperty _property, GUIContent _label)
     {
-        InitIfNot(_property);
-
         EditorGUI.BeginProperty(_position, _label, _property);
         {
+            InitIfNot(_property);
+
+            _position.y += 4.0f;
+            _position.x -= 4.0f;
             _reorderList.DoList(_position);
         }
         EditorGUI.EndProperty();
